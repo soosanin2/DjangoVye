@@ -13,3 +13,5 @@ class ArticleView(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
+def article_app(request):
+    return render(request, "main_app.html")
