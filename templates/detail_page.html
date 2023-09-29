@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ get_article.title }}
+{% endblock title %}
+
+{% block content %}
+
+
+    <div>
+
+        <div class="post-container">
+            <div id="{{ get_article.id }}" class="post">
+                <div class="alert alert-secondary">
+                    <h3> {{ get_article.title }} </h3>
+                    <h4 style="text-align: right;"> {{ get_article.author }}</h4>
+                </div>
+
+                <p class="text-post"> {{ get_article.text }} </p>
+
+
+                <button data-binding="{{ get_article.id }}" class="btn btn-secondary open-popup">
+                    Коментировать
+                </button>
+                <a href="{% url 'home' %}">
+                    <button class="btn btn-secondary">Назад</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}

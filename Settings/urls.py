@@ -1,17 +1,16 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
-from rest_framework.routers import SimpleRouter
-
-from comments.views import article_page, ArticleView, article_app
-
-router = SimpleRouter()
-
-router.register('api/comments', ArticleView)
+from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', article_page),
-    path('art_page/', article_app),
+    path('admin/', admin.site.urls, name='admin'),
+    path('', include('comments.urls')),
 
 ]
-urlpatterns += router.urls
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
