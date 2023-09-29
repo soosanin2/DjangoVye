@@ -36,7 +36,8 @@ class UserDownloads(models.Model):
 
 
 class Article(models.Model):
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="author_article")
+    # author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="author_article")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="author_article", blank=True, null=True,)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

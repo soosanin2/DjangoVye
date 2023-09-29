@@ -39,9 +39,11 @@ body {
 
 
 /*header*/
+
+
 .header-container {
     display: grid;
-    grid-template-columns:  0.7fr 2fr 3fr 1fr 1fr 1fr 1fr 0.2fr;
+    grid-template-columns:  0.7fr 2fr 2fr 1fr 1fr 1.5fr 1fr 1fr 0.2fr;
     height: 80px;
     align-items: center;
 }
